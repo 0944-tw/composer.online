@@ -5,9 +5,9 @@ let configuration = {
     enabled: true,
     per_second: 60
   },
-  queue_system: {
-    enabled: true,
-    queue_when_resources: 80
+  recaptcha: {
+    enabled: false,
+    secret_key: "My Key Here"
   }
 };
 
@@ -18,6 +18,7 @@ const wss = new WebSocket.Server({ port: 8080 });
 const fs = require("fs");
 const path = require('path');
 const { config } = require("process");
+const captcha = require("./lib/captcha.js");
 /**
  * Calculates the size of a directory recursively.
  * @param {string} dirPath - The path of the directory to calculate the size of.
@@ -135,6 +136,11 @@ wss.on("connection", function connection(ws) {
     try {
       let data = JSON.parse(message);
       ws.send("[1/3] Validating required fields ⚙️");
+      if (configuration.recaptcha.enabled && !await captcha(data.recaptcha, configuration.recaptcha.secret_key, ws._socket.remoteAddress)) {
+        ws.send("Error: Invalid Captcha");
+        ws.close(1008,"Invalid Captcha");
+        return;
+      }
       if (!data.ftpinfo || !data.password || !data.uploadDirectory || !data.composercontent) {
         ws.send("Error: Missing required fields");
         ws.close();

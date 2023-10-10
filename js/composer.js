@@ -1,3 +1,15 @@
+const { config } = require("process")
+
+// Configruation:
+let configuration = {
+    recaptcha: {
+        enabled: false,
+        site_key: ""
+    }
+}
+
+
+
 // Tab Module: Change tab when click #next Code:
 let wslogger = (msg) => {
     let original = $("#realtime-log").text()
@@ -34,7 +46,14 @@ else
     reason = "Unknown reason";
 return reason;
 }
+
 $(document).ready(function() {
+    if (configuration.recaptcha.enabled) {
+        grecaptcha.render('recaptcha', {
+            'sitekey' : configuration.recaptcha.site_key,
+            'theme' : 'dark'
+          });
+    }
     $("#next").on("click",() => {
         console.log("Next Step")
          $("#step2-tab").click();
