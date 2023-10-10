@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" data-bs-core="modern">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>composer.online - Composer</title>
+
+    <!-- Halfmoon CSS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link href="./css/halfmoon/halfmoon.min.css" rel="stylesheet" />
+    <link href="./css/halfmoon/cores/halfmoon.modern.css" rel="stylesheet" />
+    <script src="./js/jquery.min.js"></script>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Option 1: Bootstrap JS bundle with Popper -->
+
+    <!-- Option 2: Separate Popper and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    -->
+    <!-- Please create a hero -->
+    <main class="position-relative flex-grow-1 d-flex align-items-center">
+      <div
+        class="bg-body-secondary graph-pattern border-start border-secondary border-opacity-25 position-absolute top-0 end-0 h-100 w-50 z-0 d-none d-lg-block"
+      ></div>
+      <script src="./js/composer.js"></script>
+      <!--Tab-->
+      <ul class="nav nav-tabs" id="js-tabs-1" role="tablist" hidden>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="step1-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#step1"
+            type="button"
+            role="tab"
+            aria-controls="home-tab-pane"
+            aria-selected="true"
+          >
+            1
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="step2-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#step2"
+            type="button"
+            role="tab"
+            aria-controls="account-tab-pane"
+            aria-selected="false"
+          >
+            2
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="step3-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#step3"
+            type="button"
+            role="tab"
+            aria-controls="step3"
+            aria-selected="false"
+          >
+            3
+          </button>
+        </li>
+      </ul>
+      <!-- JavaScript tab plugin -->
+
+      <div class="tab-content" id="js-tabs-content-1">
+        <div
+          class="tab-pane fade show active"
+          id="step1"
+          role="tabpanel"
+          aria-labelledby="step1-tab"
+          tabindex="0"
+        >
+          <div
+            class="container-fluid g-0 overflow-hidden position-relative z-1"
+          >
+            <div class="row g-0 align-items-center">
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5"
+                id="hero-content-container"
+              >
+                <h1
+                  class="display-5 d-none d-sm-block d-lg-none d-xl-block text-sm-center text-lg-start"
+                  style="font-weight: 800"
+                >
+                  Please fill FTP Info
+                </h1>
+                <h1
+                  class="fs-1 d-sm-none d-lg-block d-xl-none"
+                  style="font-weight: 800"
+                >
+                  FTP Info
+                </h1>
+                <p
+                  class="mt-4 text-body-secondary d-none d-sm-block text-sm-center text-lg-start"
+                  style="font-size: var(--bs-font-size-lg)"
+                >
+                  We need your FTP Infomation (like Host, Username, Password,
+                  Port) to connect to your web hosting and install composer
+                  package.
+                </p>
+                <p class="fs-6 mt-4 text-body-secondary d-sm-none">
+                  FTP Infomation is used to connect to your web hosting and
+                  install composer package.
+                </p>
+                <div
+                  class="specific-w-sm-550 w-lg-100 mw-100 mx-auto d-sm-flex mt-4 mb-3"
+                >
+                  <a
+                    id="next"
+                    class="btn btn-primary btn-lg text-nowrap lh-base py-2 px-3 ms-sm-3 mt-3 mt-sm-0 d-block w-100 d-inline-block"
+                  >
+                    <span class="fw-bold antialiased">Next</span>
+
+                    <i class="fa-light fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5 align-items-start"
+              >
+                <div
+                  class="specific-w-sm-550 mw-100 mx-auto"
+                  style="width: 320px"
+                >
+                  <label for="ftp_info" class="form-label">FTP Info</label>
+                  <input
+                    type="text"
+                    id="ftp_info"
+                    class="form-control form-control-lg d-inline-block"
+                    placeholder="username@hostname"
+                    aria-label="FTP"
+                  />
+
+                  <label for="ftp_pass" class="form-label">Password</label>
+                  <input
+                    type="text"
+                    id="ftp_pass"
+                    class="form-control form-control-lg"
+                    placeholder="qwertyuiop"
+                    aria-label="Password"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="step2"
+          role="tabpanel"
+          aria-labelledby="step2-tab"
+          tabindex="0"
+        >
+          <div
+            class="container-fluid g-0 overflow-hidden position-relative z-1"
+          >
+            <!-- Upload Composer JSON-->
+            <div class="row g-0 align-items-center">
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5"
+                id="hero-content-container"
+              >
+                <h1
+                  class="display-5 d-none d-sm-block d-lg-none d-xl-block text-sm-center text-lg-start"
+                  style="font-weight: 800"
+                >
+                  Last Step! Upload Composer.json
+                </h1>
+                <h1
+                  class="fs-1 d-sm-none d-lg-block d-xl-none"
+                  style="font-weight: 800"
+                >
+                  Last Step!
+                </h1>
+                <p
+                  class="mt-4 text-body-secondary d-none d-sm-block text-sm-center text-lg-start"
+                  style="font-size: var(--bs-font-size-lg)"
+                >
+                  We need your composer.json file so we can install composer on
+                  our machine then upload it to your FTP.
+                </p>
+                <p class="fs-6 mt-4 text-body-secondary d-sm-none">
+                  We need your composer.json to download composer package.
+                </p>
+                <div
+                  class="specific-w-sm-550 w-lg-100 mw-100 mx-auto d-sm-flex mt-4 mb-3"
+                >
+                  <a
+                    id="finish"
+                    class="btn btn-primary btn-lg text-nowrap lh-base py-2 px-3 ms-sm-3 mt-3 mt-sm-0 d-block w-100 d-inline-block"
+                  >
+                    <span class="fw-bold antialiased">Finish!</span>
+
+                    <i class="fa-light fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5 align-items-start"
+              >
+                <div
+                  class="specific-w-sm-550 mw-100 mx-auto"
+                  style="width: 320px"
+                >
+                  <label for="composer-content" class="form-label"
+                    >Composer.json Content</label
+                  >
+                  <input
+                    type="text"
+                    id="composer-content"
+                    class="form-control form-control-lg d-inline-block"
+                    placeholder="Just paste to there"
+                    aria-label="composer-json-content"
+                  />
+
+                  <label for="upload_path" class="form-label"
+                    >Upload to:
+                  </label>
+                  <input
+                    type="text"
+                    id="upload_path"
+                    class="form-control form-control-lg"
+                    placeholder="/htdocs/"
+                    aria-label="Password"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="step3"
+          role="tabpanel"
+          aria-labelledby="step3-tab"
+          tabindex="0"
+        >
+          <div
+            class="container-fluid g-0 overflow-hidden position-relative z-1"
+          >
+            <!-- Upload Composer JSON-->
+            <div class="row g-0 align-items-center">
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5"
+                id="hero-content-container"
+              >
+                <h1
+                  class="display-5 d-none d-sm-block d-lg-none d-xl-block text-sm-center text-lg-start"
+                  style="font-weight: 800"
+                >
+                 Last step! Install Composer Package to your machine
+                </h1>
+                <h1
+                  class="fs-1 d-sm-none d-lg-block d-xl-none"
+                  style="font-weight: 800"
+                >
+                  Installing...
+                </h1>
+                <p
+                  class="mt-4 text-body-secondary d-none d-sm-block text-sm-center text-lg-start"
+                  style="font-size: var(--bs-font-size-lg)"
+                >
+                Do not close the tab, if you closed this tab after 10 seconds data will be deleted0
+                </p>
+                <p class="fs-6 mt-4 text-body-secondary d-sm-none">
+                  Do not close the tab, if you closed this tab after 10 seconds data will be deleted
+                </p>
+                <div
+                  class="specific-w-sm-550 w-lg-100 mw-100 mx-auto d-sm-flex mt-4 mb-3"
+                >
+                
+                </div>
+              </div>
+              <div
+                class="col-lg-6 px-3 px-sm-4 px-xl-5 py-4 py-sm-5 align-items-start"
+              >
+                <div
+                  class="specific-w-sm-550 mw-100 mx-auto"
+                  style="width: 320px"
+                >
+                <textarea class="form-control" disabled id="realtime-log" rows="10" style="font-family: monospace;">🤗 Creating WebSocket Connection. 🤗</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Tab-->
+    </main>
+  </body>
+</html>
