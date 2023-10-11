@@ -218,7 +218,7 @@ wss.on("connection", function connection(ws) {
   });
   ws.on("close", () => {
     console.log("Client disconnected");
-    ipCache.del(ws._socket.remoteAddress);
+    
     try {
       fs.rmdirSync(`./temp/${randomId}`, { recursive: true , force: true});
     } catch (err) {
